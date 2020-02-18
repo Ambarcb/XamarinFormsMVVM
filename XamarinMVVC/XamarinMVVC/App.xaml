@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinMVVC.App">
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TextColor" TargetType="Label">
+                <Setter Property="TextColor" Value="Green"/>
+                <Setter Property="FontSize" Value="17"/>
+            </Style>
+        </ResourceDictionary>
+
+        <ResourceDictionary>
+            <Style x:Key="ButtonColor" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="DeepSkyBlue"/>
+                <Setter Property="FontSize" Value="24"/>
+            </Style>
+        </ResourceDictionary>
+
+        <ResourceDictionary>
+            <Style x:Key="DiscoveryButtons" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="WhiteSmoke"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
+             x:Class="XamarinMVVC.LoginPage">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+            <Label Text="Login" 
+                           FontSize="45" TextColor="Black" FontAttributes="Bold" Margin="10" 
+                           Style="{StaticResource TextColor}"
+                           Grid.Column="0" 
+                           Grid.Row="0"
+                           Grid.ColumnSpan="4"
+                           VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+            <Label Text="Sign Up" 
+                           Grid.Row="0"
+                           FontSize="25" FontAttributes="Bold" 
+                           Style="{StaticResource TextColor}"
+                           Grid.ColumnSpan="4"
+                           Grid.Column="1"  HorizontalOptions="EndAndExpand" Margin="0,40,10,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToSignUpCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+
+            <Image Grid.Row ="1" 
+                             Grid.Column="0"
+                              Grid.ColumnSpan="4"
+                             Source="ic_userx" 
+                              HorizontalOptions="Center"
+                             WidthRequest="100" HeightRequest="100" Margin="20,40,0,0"/>
+
+            <Entry Grid.Row="2"
+                   
+                    Placeholder="Username or email address"
+                    Grid.ColumnSpan="4"
+                    x:Name="labelName"
+                    Text="{Binding User.UserName}"
+                    Margin="20,30,0,0"
+                    Grid.Column="0"/>
+
+            <Entry Grid.Row="3"
+                   Placeholder="Password" 
+                   Text="{Binding User.Password}"
+                   x:Name="passwordEntry"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   HorizontalOptions="FillAndExpand" 
+                   Margin="20,30,0,0"/>
+
+            <Image Grid.Row="3" 
+                   Grid.Column="1" 
+                   Source="ic_ShowPassword" 
+                   x:Name="passwordVisibility"
+                   HorizontalOptions="EndAndExpand" 
+                   VerticalOptions="Center" 
+                   Margin="40,30,10,0"  
+                   Grid.ColumnSpan="3" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="PasswordVisibility"/>
+                </Image.GestureRecognizers>
+            </Image>
+            
+            <Image Grid.Row="4" 
+                   Grid.Column="1" 
+                   Source="ic_world" 
+                   HorizontalOptions="End" 
+                   Margin="20,0,10,0"  
+                   Grid.ColumnSpan="3">
+
+            </Image>
+
+            <Button Command="{Binding LoginCommand}" 
+                    Grid.Row="5"  
+                    Grid.Column="0" 
+                    Grid.ColumnSpan="4" 
+                    Style="{StaticResource ButtonColor}" 
+                    ContentLayout="Left,10" 
+                    Text="LOG IN" 
+                    FontSize="15"
+                    TextColor="Black" 
+                    HorizontalOptions="FillAndExpand" 
+                    Margin="20,30,0,0" 
+                    FontAttributes="Bold"  
+                    Image="ic_checkMark" 
+                    CornerRadius="20"/>
+
+            <Label Text="{Binding DisplayErrorMessage}"  Grid.Row="6" Grid.Column="0"  Grid.ColumnSpan="4" HorizontalOptions="Center" Style="{StaticResource TextColor}" FontSize="16" Margin="20,40,0,0"/>
+
+            <Image Grid.Row="7" Grid.Column="0"  Source="ic_googleplus" Aspect="AspectFit" Margin="20">
+
+            </Image>
+
+            <Image Grid.Row="7" Grid.Column="1" Source="ic_github" Aspect="AspectFit" Margin="20">
+
+            </Image>
+            <Image Grid.Row="7" Grid.Column="2" Source="ic_twitter" Aspect="AspectFit" Margin="20">
+
+            </Image>
+            <Image Grid.Row="7" Grid.Column="3" Source="ic_facebook"  Aspect="AspectFit" Margin="20">
+
+            </Image>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

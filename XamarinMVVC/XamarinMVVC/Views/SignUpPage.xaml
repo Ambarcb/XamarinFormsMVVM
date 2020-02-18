@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
+             x:Class="XamarinMVVC.SignUpPage">
+    
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+
+            </Grid.ColumnDefinitions>
+            <Label Text="Sign Up" 
+                           FontSize="45" TextColor="Black" FontAttributes="Bold" Margin="10" 
+                           Grid.Column="0" 
+                           Grid.Row="0"
+                           VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+            <Label Text="Login" 
+                           Grid.Row="0"
+                           FontSize="25" FontAttributes="Bold" 
+                           Style="{StaticResource TextColor}"
+                           Grid.Column="1"  HorizontalOptions="EndAndExpand" Margin="0,40,10,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToLoginCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+
+            <Image Grid.Row ="1" 
+                             Grid.Column="0"
+                             Source="ic_camera" 
+                             Grid.ColumnSpan="2"
+                             HorizontalOptions="CenterAndExpand"
+                             WidthRequest="100" HeightRequest="100" Margin="10,10,0,0"/>
+
+            <Entry Grid.Row="2"
+                   
+                Placeholder="Email address"
+                   x:Name="emailLabel"
+                   Text="{Binding User.Email}"
+                    Grid.ColumnSpan="2"
+                   Margin="30"
+                   Grid.Column="0"/>
+
+            <Entry Grid.Row="3"
+                   Placeholder="Username"
+                   x:Name="usernameLabel"
+                   Text="{Binding User.UserName}"
+                    Grid.ColumnSpan="2"
+                   Grid.Column="0"
+                   Margin="30,0,30,0"/>
+
+            <Entry Grid.Row="4"
+                   Placeholder="Password"
+                   x:Name="passwordEntry"
+                   Text="{Binding User.Password}"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="FillAndExpand" 
+                   Margin="30"/>
+
+            <Image Grid.Row="4" Grid.Column="1" Source="ic_ShowPassword" x:Name="icon" HorizontalOptions="EndAndExpand"  Margin="30">
+                <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ShowPassword_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Entry Grid.Row="5" 
+                   Placeholder="Repeat password"
+                   x:Name="rPasswordEntry"
+                   Text="{Binding User.RepeatedPassword}"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="FillAndExpand" 
+                   Margin="30,0,30,50"/>
+
+            <Image Grid.Row="5" Grid.Column="1" x:Name="icon1" Source="ic_ShowPassword1" HorizontalOptions="End" Margin="0,0,30,50"  >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ShowPassword_Tappedx"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+
+            <Button Command="{Binding SignUpCommand}" Grid.Row="6"  Grid.Column="0"   FontSize="15" Grid.ColumnSpan="2" ContentLayout="Left,10" Text="SIGN UP" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="80,0,80,0" 
+                    FontAttributes="Bold"  Image="ic_checkMark" BorderColor="Gainsboro"  Style="{StaticResource ButtonColor}" CornerRadius="20"/>
+
+            <Label Text="{Binding DisplayErrorMessage}" Style="{StaticResource TextColor}" Grid.Row="7" Grid.Column="0"  Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" FontSize="16" Margin="30,10,30,0"/>
+
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

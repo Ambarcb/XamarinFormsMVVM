@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="White"
+             x:Class="XamarinMVVC.DiscoveryPage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="170"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="195"/>
+                    <ColumnDefinition Width="195"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="{Binding DiscoveryPageName}"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       FontSize="30" 
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                        FontFamily="Calibri"
+                       TextColor="Black"/>
+
+                <Button Grid.Row="1" 
+                        Grid.Column="0"
+                        Margin="0,10,0,0"
+                        ContentLayout="Top,0"
+                        Text="{Binding DiscoveryHotels.Title}"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        Style="{StaticResource DiscoveryButtons}"
+                        Clicked="Button_Clicked"
+                       
+                        ImageSource="ic_beer"/>
+
+                <Label Text="{Binding DiscoveryHotels.SubTitle}"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       HorizontalOptions="Center"
+                       Margin="0,130,0,0"
+                       FontSize="15"/>
+
+                <Button Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,10,0,0"
+                        ContentLayout="Top,0"
+                        Text="{Binding DiscoveryDining.Title}"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        Style="{StaticResource DiscoveryButtons}"
+                        Clicked="Button_Clicked"
+                    
+                        ImageSource="ic_serving"/>
+
+                <Label Text="{Binding DiscoveryDining.SubTitle}"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       Margin="0,130,0,0"
+                       FontSize="15"/>
+
+                <Button Grid.Row="2"
+                        Grid.Column="0" 
+                        Margin="0,10,0,0"
+                        ContentLayout="Top,0"
+                        Text="{Binding DiscoveryCafes.Title}"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        Style="{StaticResource DiscoveryButtons}"
+                         Clicked="Button_Clicked"
+                        
+                        ImageSource="ic_cafe"/>
+
+                <Label Text="{Binding DiscoveryCafes.SubTitle}"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       HorizontalOptions="Center"
+                       Margin="0,130,0,0"
+                       FontSize="15"/>
+
+                <Button Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="0,10,0,0"
+                        ContentLayout="Top,0"
+                        Text="{Binding DiscoveryNearby.Title}"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        Style="{StaticResource DiscoveryButtons}"
+                         Clicked="Button_Clicked"
+                      
+                        ImageSource="ic_route"/>
+
+                <Label Text="{Binding DiscoveryNearby.SubTitle}"
+                       Grid.Row="2"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       Margin="0,130,0,0"
+                       FontSize="15"/>
+
+                <Button Grid.Row="3"
+                        Grid.Column="0"
+                        Margin="0,10,0,0"
+                        ContentLayout="Top,0"
+                        Text="{Binding DiscoveryFastFood.Title}"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        Style="{StaticResource DiscoveryButtons}"
+                         Clicked="Button_Clicked"
+                        
+                        ImageSource="ic_burger"/>
+
+                <Label Text="{Binding DiscoveryFastFood.SubTitle}"
+                       
+                       Grid.Row="3"
+                       Grid.Column="0"
+                       HorizontalOptions="Center"
+                       Margin="0,130,0,0"
+                       FontSize="15"/>
+
+
+                <Button Grid.Row="3"
+                        Grid.Column="1"
+                        ContentLayout="Top,0"
+                        Text="{Binding DiscoveryFeaturedFoods.Title}"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        Margin="0,10,0,0"
+                        Clicked="Button_Clicked"
+                         Style="{StaticResource DiscoveryButtons}"                  
+                        ImageSource="ic_pizza"/>
+
+                <Label Text="{Binding DiscoveryFeaturedFoods.SubTitle}"
+                       Grid.Row="3"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       Margin="0,130,0,0"
+                       TextColor="DarkGray"
+                       FontSize="15"/>
+
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SelectedDevice>pixel_3a_xl_oreo_8_1_-_api_27</SelectedDevice>
+    <DefaultDevice>nexus_6p_oreo_8_1_-_api_27</DefaultDevice>
+    <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
+  </PropertyGroup>
+</Project>
